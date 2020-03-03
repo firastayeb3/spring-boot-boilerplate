@@ -46,7 +46,7 @@ public class AuthorController extends BaseController implements AuthorsApi {
   @Override
   public ResponseEntity<Author> getAuthorById(@PathVariable("id") Integer id) {
 
-    if(id == 1) {
+    if (id == 1) {
       Author author = new Author()
           .firstname("Max")
           .lastname("Mustermann")
