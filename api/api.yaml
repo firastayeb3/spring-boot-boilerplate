@@ -59,31 +59,18 @@ paths:
               schema:
                 $ref: '#/components/schemas/author'
 
-  /test:
+  /testVI:
     get:
       tags:
-        - author
+        - testVI
       operationId: getStringTest
-      parameters:
-        - name: limit
-          description: number of returned results
-          in: query
-          schema:
-            type: integer
-            default: 0
-        - name: offset
-          description: offset of returned results
-          in: query
-          schema:
-            type: integer
-            default: 0
       responses:
         200:
           description: operation successful
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/test'
+                $ref: '#/components/schemas/testVI'
 
 components:
   schemas:
@@ -131,11 +118,10 @@ components:
             self:
               $ref: '#/components/schemas/halLink'
 
-    test:
+    testVI:
       type: object
       description: string test
       required:
-        - _links
         - value
       properties:
         value:
@@ -146,10 +132,6 @@ components:
             - self
           properties:
             self:
-              $ref: '#/components/schemas/halLink'
-            next:
-              $ref: '#/components/schemas/halLink'
-            previous:
               $ref: '#/components/schemas/halLink'
 
 
